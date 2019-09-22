@@ -3,6 +3,7 @@
 SELECT  * FROM teacher;
 
 -- 2 task
+
 SELECT * FROM student_group
 WHERE student_group.specialization = 'ЭВМ';
 
@@ -11,9 +12,12 @@ WHERE student_group.specialization = 'ЭВМ';
 SELECT lect_id, audience FROM teacher_student_group
 WHERE id = '18П';
 
--- 4 task ААААААААААААААА ?!
+-- 4 task
 
-
+SELECT DISTINCT  subgect.name,  subgect.id FROM teacher_student_group
+JOIN teacher ON teacher.lect_id = teacher_student_group.lect_id
+JOIN subgect ON subgect.id = teacher_student_group.id
+WHERE teacher.surname = 'Костин';
 
 -- 5 task
 
@@ -44,9 +48,10 @@ JOIN student_group ON student_group.id_group = teacher_student_group.id_group
 JOIN subgect ON subgect.id = teacher_student_group.id
 WHERE teacher_student_group.audience BETWEEN 100 AND 200;
 
--- 10 task AAAAAAAAAAAA ?!
+-- 10 task
 
-SELECT specialization, CONCAT(id, id) FROM subgect
+SELECT specialization, GROUP_CONCAT(id_group SEPARATOR ', ') AS 'group'
+FROM student_group
 GROUP BY specialization;
 
 -- 11 task
@@ -60,10 +65,12 @@ HAVING specialization = 'АСОИ';
 SELECT  lect_id FROM teacher
 WHERE specialization LIKE '%ЭВМ%';
 
--- 13 task ?!
+-- 13 task
 
-SELECT id, COUNT(id_group)  FROM teacher_student_group
-GROUP BY  id;
+SELECT id 
+FROM teacher_student_group
+GROUP BY  id
+HAVING COUNT(id_group) >=7;
 
 -- 14 task
 
@@ -95,10 +102,10 @@ SELECT  DISTINCT teacher_student_group.lect_id, teacher_student_group.id, teache
 JOIN teacher_student_group ON teacher.lect_id = teacher_student_group.lect_id
 WHERE teacher.specialization LIKE '%АСОИ%'  AND teacher.department = 'ЭВМ';
 
--- 19 task ??? Why there is no international economy ???
+-- 19 task
 
 SELECT  DISTINCT student_group.id_group FROM teacher
-JOIN student_group ON teacher.specialization = student_group.specialization;
+JOIN student_group ON teacher.specialization LIKE CONCAT('%', student_group.specialization ,'%');
 
 -- 20 task
 
@@ -119,25 +126,33 @@ SELECT  DISTINCT teacher_student_group.id FROM student_group
 JOIN teacher_student_group ON student_group.id_group = teacher_student_group.id_group
 WHERE student_group.group_name = 'АС-8';
 
--- 23 task AAAAAAAAAAAAA ?!
+-- 23 task
 
-SELECT  DISTINCT teacher_student_group.id FROM student_group
+SELECT DISTINCT teacher_student_group.id_group FROM teacher_student_group
+WHERE  teacher_student_group.id IN (SELECT DISTINCT teacher_student_group.id FROM student_group
 JOIN teacher_student_group ON student_group.id_group = teacher_student_group.id_group
-WHERE student_group.group_name = 'АС-8';
+WHERE  student_group.group_name = 'АС-8');
 
--- 24 task AAAAAAAAAAAAA ?!
+-- 24 task
 
+SELECT DISTINCT teacher_student_group.id_group FROM teacher_student_group
+WHERE  teacher_student_group.id NOT IN (SELECT DISTINCT teacher_student_group.id FROM student_group
+JOIN teacher_student_group ON student_group.id_group = teacher_student_group.id_group
+WHERE  student_group.group_name = 'АС-8');
 
+-- 25 task
 
--- 25 task ???
+SELECT DISTINCT teacher_student_group.id_group FROM teacher_student_group
+WHERE  teacher_student_group.id_group NOT IN (SELECT  DISTINCT teacher_student_group.id_group FROM teacher_student_group
+WHERE teacher_student_group.lect_id = '430Л');
 
-SELECT  DISTINCT teacher_student_group.id_group FROM teacher_student_group
-WHERE teacher_student_group.lect_id != '430Л';
+-- 26 task
 
-
--- 26 task ??? HMMMM
-
-
+SELECT DISTINCT teacher_student_group.lect_id FROM teacher_student_group
+WHERE  teacher_student_group.id_group IN (SELECT DISTINCT teacher_student_group.id_group FROM student_group
+JOIN teacher_student_group ON student_group.id_group = teacher_student_group.id_group
+WHERE  student_group.group_name = 'Э-15') AND teacher_student_group.lect_id NOT IN (SELECT DISTINCT teacher_student_group.lect_id FROM teacher_student_group
+WHERE  teacher_student_group.id = '12П');
 
 
 

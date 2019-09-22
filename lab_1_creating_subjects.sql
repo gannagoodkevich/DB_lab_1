@@ -55,7 +55,7 @@ CREATE TABLE student_group(
 id_group VARCHAR(20) not NULL,
 group_name VARCHAR(20) not NULL,
 num_of_students INT,
-specialization VARCHAR(20) not NULL,
+specialization VARCHAR(50) not NULL,
 leader VARCHAR(20) not NULL,
 PRIMARY KEY (id_group) 
 );
@@ -101,7 +101,7 @@ INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
 VALUES ('7Г', '14П', '221Л', '220');
 
 INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
-VALUES ('7Г', '18П', '222Л', '241');
+VALUES ('7Г', '17П', '222Л', '241');
 
 INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
 VALUES ('7Г', '18П', '225Л', '210');
@@ -134,7 +134,7 @@ INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
 VALUES ('12Г', '12П', '222Л', '112');
 
 INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
-VALUES ('8Г', '22П', '110Л', '210');
+VALUES ('12Г', '22П', '110Л', '210');
 
 INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
 VALUES ('10Г', '12П', '222Л', '210');
