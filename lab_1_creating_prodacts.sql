@@ -80,79 +80,79 @@ VALUES ('ПР7', 'ИПР7', 'Москва');
 CREATE TABLE producer_project_part_number(
 id_d VARCHAR(20) not NULL,
 id_p VARCHAR(20) not NULL,
-id_pr VARCHAR(20) not NULL
+id_pr VARCHAR(20) not NULL,
 part_number INT,
-PRIMARY KEY (id_d, id_p, id_pr)
+CONSTRAINT prodact_key PRIMARY KEY (id_d, id_p, id_pr)
 );
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П1', 'Д1', 'ПР1', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П1', 'Д1', 'ПР2', '700');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д3', 'ПР1', '400');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д2', 'ПР2', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д3', 'ПР3', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д3', 'ПР4', '500');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д3', 'ПР5', '600');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д3', 'ПР6', '400');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д3', 'ПР7', '800');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П2', 'Д5', 'ПР2', '100');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П3', 'Д3', 'ПР1', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П3', 'Д4', 'ПР2', '500');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П4', 'Д6', 'ПР3', '300');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П4', 'Д6', 'ПР7', '300');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д2', 'ПР2', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д2', 'ПР4', '100');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д5', 'ПР5', '500');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д5', 'ПР7', '100');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д6', 'ПР2', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д1', 'ПР2', '100');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д3', 'ПР4', '200');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д4', 'ПР4', '800');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д5', 'ПР4', '400');
 
-INSERT INTO teacher_student_group(id_group , id, lect_id, audience)
+INSERT INTO producer_project_part_number(id_d , id_p, id_pr, part_number)
 VALUES ('П5', 'Д6', 'ПР4', '500');
