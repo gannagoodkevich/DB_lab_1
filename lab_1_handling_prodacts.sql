@@ -11,8 +11,13 @@ JOIN part ON part.id =  producer_project_part_number.id_p
 JOIN project ON project.id = producer_project_part_number.id_pr
 WHERE producer.city != part.city AND producer.city != project.city AND part.city != project.city;
 
--- task 8 ???!!!
+-- task 8
 
+SELECT part.city, project.city, producer.city FROM producer_project_part_number
+JOIN producer ON producer_project_part_number.id_d = producer.id
+JOIN part ON part.id =  producer_project_part_number.id_p
+JOIN project ON project.id = producer_project_part_number.id_pr
+GROUP BY part.city, project.city, producer.city;
 
 -- task 12
 
@@ -33,7 +38,7 @@ SELECT DISTINCT producer_project_part_number.id_p, producer_project_part_number.
 GROUP BY  producer_project_part_number.id_p, producer_project_part_number.id_pr
 HAVING SUM(producer_project_part_number.part_number) > 320;
 
--- task 25 ???!!!
+-- task 25
 
 SELECT project.id FROM project
 ORDER BY project.city
@@ -62,5 +67,3 @@ FROM producer_project_part_number
 GROUP BY producer_project_part_number.id_d) newTable
 GROUP BY prodact
 HAVING COUNT(id_d) > 1;
-
-
